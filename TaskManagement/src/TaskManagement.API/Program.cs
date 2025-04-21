@@ -1,32 +1,57 @@
+using FluentValidation.AspNetCore;
+using System.Text.Json.Serialization;
+using TaskManagement.API.Middleware;
 using TaskManagement.Application;
 using TaskManagement.Domain;
 using TaskManagement.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
 
 // Add Dependency Injection
 builder.Services.AddApplicationDependencyInjection();
 builder.Services.AddDomainDependencyInjection();
 builder.Services.AddInfrastructureDependencyInjection(builder.Configuration);
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+//FluentValidations
+builder.Services.AddFluentValidationAutoValidation();
+
+//Add model binder to read values from JSON to enum
+builder.Services.ConfigureHttpJsonOptions(options => {
+    options.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
+});
+
+//Add Swagger services
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+//Cors
+builder.Services.AddCors(options => {
+    options.AddDefaultPolicy(builder => {
+        builder.WithOrigins("http://localhost:4200")
+        .AllowAnyMethod()
+        .AllowAnyHeader();
+    });
+});
+
+
+var app = builder.Build();
+
+app.UseExceptionHandlingMiddleware();
+app.UseRouting();
+
+//Cors
+app.UseCors();
+
+//Swagger
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
