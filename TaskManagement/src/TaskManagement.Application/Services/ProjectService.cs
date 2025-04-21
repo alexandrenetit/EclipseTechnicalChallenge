@@ -1,9 +1,11 @@
-﻿using TaskManagement.Application.DTOs;
+﻿using FluentValidation;
+using TaskManagement.Application.DTOs;
 using TaskManagement.Application.Interfaces;
 using TaskManagement.Application.Mappers;
+using TaskManagement.Application.Validators;
 using TaskManagement.Domain.Entities;
 using TaskManagement.Domain.Enums;
-using TaskManagement.Domain.Repository;
+using TaskManagement.Domain.Repositories;
 
 namespace TaskManagement.Application.Services;
 
@@ -23,6 +25,12 @@ public class ProjectService : IProjectService
 
     public async Task<ProjectResponse> CreateProjectAsync(CreateProjectRequest request)
     {
+        var validator = new CreateProjectRequestValidator();
+        var validationResult = await validator.ValidateAsync(request);
+
+        if (!validationResult.IsValid)
+            throw new ValidationException(validationResult.Errors);
+
         var project = new Project(Guid.NewGuid(), request.Name, request.Description, request.OwnerId);
 
         await _projectRepository.AddAsync(project);

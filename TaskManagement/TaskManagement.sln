@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagement.Domain", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagement.Application", "src\TaskManagement.Application\TaskManagement.Application.csproj", "{A7915FB2-8CB0-45DF-A586-06440FE725DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagement.Infrastructure", "src\TaskManagement.Infrastructure\TaskManagement.Infrastructure.csproj", "{ED865963-D926-43AA-B599-81A54DA5D506}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagement.API", "src\TaskManagement.API\TaskManagement.API.csproj", "{10B82CF5-AAAE-400F-9ACE-841E0449FD0F}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{81DDED9D-158B-E303-5F62-77A2896D2A5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +31,18 @@ Global
 		{A7915FB2-8CB0-45DF-A586-06440FE725DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7915FB2-8CB0-45DF-A586-06440FE725DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7915FB2-8CB0-45DF-A586-06440FE725DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED865963-D926-43AA-B599-81A54DA5D506}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED865963-D926-43AA-B599-81A54DA5D506}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED865963-D926-43AA-B599-81A54DA5D506}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED865963-D926-43AA-B599-81A54DA5D506}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10B82CF5-AAAE-400F-9ACE-841E0449FD0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10B82CF5-AAAE-400F-9ACE-841E0449FD0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10B82CF5-AAAE-400F-9ACE-841E0449FD0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10B82CF5-AAAE-400F-9ACE-841E0449FD0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +50,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{36E0327A-E3D2-4FD2-85B0-8D6D0FB867A1} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{A7915FB2-8CB0-45DF-A586-06440FE725DF} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{ED865963-D926-43AA-B599-81A54DA5D506} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{10B82CF5-AAAE-400F-9ACE-841E0449FD0F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2EEA7F71-6FB3-426B-8678-F5F88E9CF151}

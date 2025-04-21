@@ -1,4 +1,4 @@
-﻿namespace TaskManagement.Domain.Repository
+﻿namespace TaskManagement.Domain.Repositories
 {
     /// <summary>
     /// Unit of work interface for transaction management

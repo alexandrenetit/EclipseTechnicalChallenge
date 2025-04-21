@@ -1,6 +1,6 @@
 ﻿using TaskManagement.Application.DTOs;
 using TaskManagement.Domain.Enums;
-using TaskManagement.Domain.Repository;
+using TaskManagement.Domain.Repositories;
 
 namespace TaskManagement.Application.Services;
 

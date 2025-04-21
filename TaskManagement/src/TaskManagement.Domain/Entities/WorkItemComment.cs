@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TaskManagement.Domain.Entities.Base;
+﻿using TaskManagement.Domain.Entities.Base;
 
 namespace TaskManagement.Domain.Entities;
 
@@ -17,7 +12,8 @@ public class WorkItemComment : Entity<Guid>
     public Guid WorkItemId { get; private set; }
     public DateTime CreatedAt { get; private set; }
 
-    public WorkItemComment() { }
+    public WorkItemComment()
+    { }
 
     public WorkItemComment(Guid id, string content, Guid authorId, Guid workItemId)
     {

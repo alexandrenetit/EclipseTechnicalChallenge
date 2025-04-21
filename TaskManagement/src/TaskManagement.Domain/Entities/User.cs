@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TaskManagement.Domain.Entities.Base;
+﻿using TaskManagement.Domain.Entities.Base;
 
 namespace TaskManagement.Domain.Entities
 {
@@ -19,7 +14,8 @@ namespace TaskManagement.Domain.Entities
         private readonly List<Project> _projects = new();
         public IReadOnlyCollection<Project> Projects => _projects.AsReadOnly();
 
-        private User() { } // For EF Core
+        private User()
+        { } // For EF Core
 
         public User(Guid id, string name, string email, bool isManager = false)
         {

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TaskManagement.Domain.Entities.Base;
+﻿using TaskManagement.Domain.Entities.Base;
 
 namespace TaskManagement.Domain.Entities
 {
@@ -16,7 +11,8 @@ namespace TaskManagement.Domain.Entities
         public Guid UserId { get; private set; }
         public DateTime JoinedAt { get; private set; }
 
-        private ProjectMember() { }
+        private ProjectMember()
+        { }
 
         public ProjectMember(Guid projectId, Guid userId)
         {

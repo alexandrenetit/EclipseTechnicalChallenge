@@ -1,6 +1,6 @@
 ﻿using TaskManagement.Domain.Entities;
 
-namespace TaskManagement.Domain.Repository;
+namespace TaskManagement.Domain.Repositories;
 
 /// <summary>
 /// Work item-specific repository interface

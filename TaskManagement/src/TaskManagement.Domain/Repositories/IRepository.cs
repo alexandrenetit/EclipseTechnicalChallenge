@@ -1,6 +1,6 @@
 ﻿using TaskManagement.Domain.Entities.Base;
 
-namespace TaskManagement.Domain.Repository
+namespace TaskManagement.Domain.Repositories
 {
     /// <summary>
     /// Generic repository interface
