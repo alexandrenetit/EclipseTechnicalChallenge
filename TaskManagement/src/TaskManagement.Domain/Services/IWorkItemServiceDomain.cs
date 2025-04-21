@@ -6,7 +6,7 @@ namespace TaskManagement.Domain.Services;
 /// <summary>
 /// Domain service for work item operations
 /// </summary>
-public interface IWorkItemService
+public interface IWorkItemServiceDomain
 {
     void ValidateWorkItemCreation(Project project, WorkItemPriority priority);
 }
