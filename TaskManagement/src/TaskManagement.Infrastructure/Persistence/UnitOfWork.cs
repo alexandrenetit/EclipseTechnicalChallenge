@@ -14,8 +14,10 @@ namespace TaskManagement.Infrastructure.Persistence
             _context = context;
         }
 
-        public IProjectRepository Projects => _projectRepository ??= new ProjectRepository(_context);
-        public IWorkItemRepository WorkItems => _workItemRepository ??= new WorkItemRepository(_context);
+        public IProjectRepository Projects => 
+            _projectRepository ??= new ProjectRepository(_context);
+        public IWorkItemRepository WorkItems => 
+            _workItemRepository ??= new WorkItemRepository(_context);
 
         public async Task<int> CommitAsync()
         {

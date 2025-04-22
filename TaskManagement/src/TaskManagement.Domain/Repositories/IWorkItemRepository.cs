@@ -10,4 +10,8 @@ public interface IWorkItemRepository : IRepository<WorkItem>
     Task<IEnumerable<WorkItem>> GetByProjectIdAsync(Guid projectId);
 
     Task<WorkItem?> GetWithDetailsAsync(Guid id);
+
+    Task AddCommentAsync(WorkItemComment comment);
+
+    Task AddHistoryAsync(WorkItemHistory history);
 }

@@ -34,6 +34,7 @@ public class ProjectService : IProjectService
         var project = new Project(Guid.NewGuid(), request.Name, request.Description, request.OwnerId);
 
         await _projectRepository.AddAsync(project);
+
         await _unitOfWork.CommitAsync();
 
         return project.ToResponse();

@@ -57,6 +57,7 @@ public class WorkItemService : IWorkItemService
         project.AddWorkItem(workItem);
 
         await _workItemRepository.AddAsync(workItem);
+
         await _unitOfWork.CommitAsync();
 
         return workItem.ToResponse();
@@ -127,15 +128,23 @@ public class WorkItemService : IWorkItemService
 
     public async Task<CommentResponse> AddCommentAsync(Guid workItemId, AddCommentRequest request)
     {
-        var workItem = await _workItemRepository.GetByIdAsync(workItemId);
+        var workItem = await _workItemRepository.GetWithDetailsAsync(workItemId);
         if (workItem == null)
         {
             throw new KeyNotFoundException("Work item not found");
         }
 
         workItem.AddComment(request.Content, request.AuthorId);
+
+        var newComment = workItem.Comments.Last();
+
+        var newHistory = workItem.History.Last();
+
+        await _workItemRepository.AddCommentAsync(newComment);
+        await _workItemRepository.AddHistoryAsync(newHistory);
+
         await _unitOfWork.CommitAsync();
 
-        return workItem.Comments.Last().ToResponse();
+        return newComment.ToResponse();
     }
 }

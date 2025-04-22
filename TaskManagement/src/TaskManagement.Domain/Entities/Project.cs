@@ -10,14 +10,20 @@ namespace TaskManagement.Domain.Entities;
 public class Project : Entity<Guid>
 {
     public string Name { get; private set; }
+    
     public string Description { get; private set; }
+    
     public Guid OwnerId { get; private set; }
 
+    public virtual User Owner { get; private set; }
+
     private readonly List<WorkItem> _workItems = new();
+
     public IReadOnlyCollection<WorkItem> WorkItems => _workItems.AsReadOnly();
 
     private readonly List<ProjectMember> _members = new();
-    public IReadOnlyCollection<ProjectMember> Members => _members.AsReadOnly();
+
+    public IReadOnlyCollection<ProjectMember> Members => _members.AsReadOnly();   
 
     private Project()
     { }

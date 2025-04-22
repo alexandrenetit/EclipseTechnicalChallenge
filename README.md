@@ -12,7 +12,7 @@ A RESTful API for managing tasks and projects built with .NET 8, following Clean
 ## Technologies
 
 - .NET 8
-- PostgreSQL
+- MySQL
 - Entity Framework Core
 - Docker
 
@@ -27,8 +27,8 @@ A RESTful API for managing tasks and projects built with .NET 8, following Clean
 
 1. Clone the repository
 2. Run `docker-compose up --build`
-3. The API will be available at `http://localhost:8080`
+3. The API will be available at `http://localhost:7000`
 
 ### API Documentation
 
-After starting the application, Swagger UI will be available at `http://localhost:8080/swagger
+After starting the application, Swagger UI will be available at `http://localhost:7000/swagger

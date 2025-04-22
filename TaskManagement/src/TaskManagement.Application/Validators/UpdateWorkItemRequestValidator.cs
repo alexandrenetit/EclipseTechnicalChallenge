@@ -16,7 +16,7 @@ public class UpdateWorkItemRequestValidator : AbstractValidator<UpdateWorkItemRe
             .When(x => x.Description != null);
 
         RuleFor(x => x.DueDate)
-            .GreaterThan(DateTime.UtcNow).WithMessage("Due date must be in the future")
+            .NotEmpty().WithMessage("Due date is required")
             .When(x => x.DueDate.HasValue);
 
         RuleFor(x => x.Status)

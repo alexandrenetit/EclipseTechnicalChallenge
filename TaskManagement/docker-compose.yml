@@ -1,6 +1,46 @@
+version: '3.4'
+
 services:
   taskmanagement.api:
-    image: ${DOCKER_REGISTRY-}taskmanagementapi
+    image: taskmanagementapi
     build:
       context: .
       dockerfile: src/TaskManagement.API/Dockerfile
+    environment:
+      - ASPNETCORE_URLS=http://+:8080
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DOTNET_USE_POLLING_FILE_WATCHER=true
+      - MYSQL_HOST=mysql-container
+      - MYSQL_PORT=3306  # Internal container port
+      - MYSQL_DATABASE=taskmanagementdb
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=admin
+    ports:
+      - "7000:8080"
+    networks:
+      - tasks-mysql-network
+    depends_on:
+      mysql-container:
+        condition: service_healthy
+
+  mysql-container:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=taskmanagementdb
+    ports:
+      - "3307:3306"  # Externally 3307, internally 3306
+    volumes:
+      - ../mysql-init:/docker-entrypoint-initdb.d
+    networks:
+      - tasks-mysql-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-padmin"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+    restart: unless-stopped  # Add automatic restart
+
+networks:
+  tasks-mysql-network:
+    driver: bridge

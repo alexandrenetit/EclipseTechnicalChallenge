@@ -32,7 +32,9 @@ public class WorkItemRepository : IWorkItemRepository
 
     public async Task<WorkItem?> GetByIdAsync(Guid id)
     {
-        return await _context.WorkItems.FindAsync(id);
+        return await _context.WorkItems
+            .Include(wi => wi.Comments)
+            .FirstOrDefaultAsync(wi => wi.Id == id);
     }
 
     public async Task<IEnumerable<WorkItem>> GetByProjectIdAsync(Guid projectId)
@@ -47,12 +49,27 @@ public class WorkItemRepository : IWorkItemRepository
         return await _context.WorkItems
             .Include(wi => wi.Comments)
             .Include(wi => wi.History)
+            .AsTracking()
             .FirstOrDefaultAsync(wi => wi.Id == id);
     }
 
     public async Task UpdateAsync(WorkItem entity)
     {
-        _context.WorkItems.Update(entity);
+        _context.Entry(entity).State = EntityState.Modified;
+
+        _context.Entry(entity).Collection(e => e.Comments).IsModified = true;
+        _context.Entry(entity).Collection(e => e.History).IsModified = true;
+
         await Task.CompletedTask;
+    }
+
+    public async Task AddCommentAsync(WorkItemComment comment)
+    {
+        await _context.WorkItemComments.AddAsync(comment);
+    }
+
+    public async Task AddHistoryAsync(WorkItemHistory history)
+    {
+        await _context.WorkItemHistories.AddAsync(history);
     }
 }

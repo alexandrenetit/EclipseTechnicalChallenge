@@ -7,7 +7,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development",
         "MYSQL_HOST": "localhost",
         "MYSQL_PORT": "3306",
-        "MYSQL_DATABASE": "ecommerceproductsdatabase",
+        "MYSQL_DATABASE": "taskmanagementdb",
         "MYSQL_USER": "root",
         "MYSQL_PASSWORD": "admin"
       },
@@ -22,7 +22,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development",
         "MYSQL_HOST": "localhost",
         "MYSQL_PORT": "3306",
-        "MYSQL_DATABASE": "ecommerceproductsdatabase",
+        "MYSQL_DATABASE": "taskmanagementdb",
         "MYSQL_USER": "root",
         "MYSQL_PASSWORD": "admin"
       },
@@ -37,7 +37,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development",
         "MYSQL_HOST": "localhost",
         "MYSQL_PORT": "3306",
-        "MYSQL_DATABASE": "ecommerceproductsdatabase",
+        "MYSQL_DATABASE": "taskmanagementdb",
         "MYSQL_USER": "root",
         "MYSQL_PASSWORD": "admin"
       }
