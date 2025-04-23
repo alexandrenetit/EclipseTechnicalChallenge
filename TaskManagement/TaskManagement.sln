@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35828.75 d17.13
+VisualStudioVersion = 17.13.35828.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -16,6 +16,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagement.API", "src\TaskManagement.API\TaskManagement.API.csproj", "{10B82CF5-AAAE-400F-9ACE-841E0449FD0F}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{81DDED9D-158B-E303-5F62-77A2896D2A5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit", "Unit", "{1F6000CC-5128-4BCA-BE0A-AA8FEA95EB8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagement.Tests.Unit", "tests\TaskManagement.Unit\TaskManagement.Tests.Unit.csproj", "{46B0735A-CDCC-42DC-91DB-1B1583BEA306}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{06DBBBAB-0B5F-42AF-A0CF-9A430DAE81BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagement.Tests.Integration", "tests\TaskManagement.Tests.Integration\TaskManagement.Tests.Integration.csproj", "{3DD077C9-760D-4B37-BA04-4588931904AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +51,14 @@ Global
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46B0735A-CDCC-42DC-91DB-1B1583BEA306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46B0735A-CDCC-42DC-91DB-1B1583BEA306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46B0735A-CDCC-42DC-91DB-1B1583BEA306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46B0735A-CDCC-42DC-91DB-1B1583BEA306}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DD077C9-760D-4B37-BA04-4588931904AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DD077C9-760D-4B37-BA04-4588931904AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DD077C9-760D-4B37-BA04-4588931904AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DD077C9-760D-4B37-BA04-4588931904AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +68,10 @@ Global
 		{A7915FB2-8CB0-45DF-A586-06440FE725DF} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{ED865963-D926-43AA-B599-81A54DA5D506} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{10B82CF5-AAAE-400F-9ACE-841E0449FD0F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{1F6000CC-5128-4BCA-BE0A-AA8FEA95EB8F} = {001AE20A-E262-41A5-9729-C2BC24571AD7}
+		{46B0735A-CDCC-42DC-91DB-1B1583BEA306} = {1F6000CC-5128-4BCA-BE0A-AA8FEA95EB8F}
+		{06DBBBAB-0B5F-42AF-A0CF-9A430DAE81BF} = {001AE20A-E262-41A5-9729-C2BC24571AD7}
+		{3DD077C9-760D-4B37-BA04-4588931904AE} = {06DBBBAB-0B5F-42AF-A0CF-9A430DAE81BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2EEA7F71-6FB3-426B-8678-F5F88E9CF151}
