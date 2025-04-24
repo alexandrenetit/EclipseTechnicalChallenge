@@ -1,0 +1,10 @@
+š
+ŽC:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\obj\Debug\net8.0\TaskManagement.API.MvcApplicationPartsAssemblyInfo.csutf-8†
+{C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\obj\Debug\net8.0\TaskManagement.API.AssemblyInfo.csutf-8“
+‡C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.csutf-8ˆ
+}C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\obj\Debug\net8.0\TaskManagement.API.GlobalUsings.g.csutf-8[
+RC:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\Program.csutf-8z
+qC:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\Middleware\ExceptionHandlingMiddleware.csutf-8s
+jC:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\Controllers\WorkItemsController.csutf-8q
+hC:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\Controllers\ReportsController.csutf-8r
+iC:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\Controllers\ProjectsController.csutf-8

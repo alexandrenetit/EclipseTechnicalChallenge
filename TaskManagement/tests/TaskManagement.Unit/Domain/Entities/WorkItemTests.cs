@@ -7,11 +7,17 @@ using Xunit;
 
 namespace TaskManagement.Tests.Unit.Domain.Entities;
 
+/// <summary>
+/// Tests for the WorkItem entity
+/// </summary>
 public class WorkItemTests
 {
     private readonly Faker<WorkItem> _workItemFaker;
     private readonly Faker _faker;
 
+    /// <summary>
+    /// Initializes a new instance of the WorkItemTests class
+    /// </summary>
     public WorkItemTests()
     {
         _faker = new Faker();
@@ -28,7 +34,10 @@ public class WorkItemTests
                 Guid.NewGuid()));
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that constructor creates work item with provided values
+    /// </summary>
+    [Fact(DisplayName = "Constructor should create work item with provided values")]
     public void Constructor_WhenCalled_ShouldCreateWorkItemWithProvidedValues()
     {
         // Arrange
@@ -58,7 +67,10 @@ public class WorkItemTests
         workItem.History.First().Action.Should().Be("Work item created");
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that UpdateStatus updates status and adds history when status changes
+    /// </summary>
+    [Fact(DisplayName = "UpdateStatus should update status and add history when status changes")]
     public void UpdateStatus_WhenNewStatusDifferent_ShouldUpdateStatusAndAddHistory()
     {
         // Arrange
@@ -77,7 +89,10 @@ public class WorkItemTests
         workItem.History.Last().ModifiedBy.Should().Be(modifiedBy);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that UpdateStatus doesn't update status or add history when status is same
+    /// </summary>
+    [Fact(DisplayName = "UpdateStatus shouldn't update status or add history when status is same")]
     public void UpdateStatus_WhenNewStatusSame_ShouldNotUpdateStatusOrAddHistory()
     {
         // Arrange
@@ -94,7 +109,10 @@ public class WorkItemTests
         workItem.History.Should().HaveCount(initialHistoryCount);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that UpdateDetails updates all details and adds history when details change
+    /// </summary>
+    [Fact(DisplayName = "UpdateDetails should update all details and add history when details change")]
     public void UpdateDetails_WhenAllDetailsDifferent_ShouldUpdateAllDetailsAndAddHistory()
     {
         // Arrange
@@ -122,7 +140,10 @@ public class WorkItemTests
         lastHistoryEntry.Should().Contain($"Due date changed from {initialDueDate:yyyy-MM-dd} to {newDueDate:yyyy-MM-dd}");
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that UpdateDetails doesn't update or add history when no details change
+    /// </summary>
+    [Fact(DisplayName = "UpdateDetails shouldn't update or add history when no details change")]
     public void UpdateDetails_WhenNoDetailsDifferent_ShouldNotUpdateOrAddHistory()
     {
         // Arrange
@@ -137,7 +158,10 @@ public class WorkItemTests
         workItem.History.Should().HaveCount(initialHistoryCount);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that UpdateDetails updates only title and adds history when only title changes
+    /// </summary>
+    [Fact(DisplayName = "UpdateDetails should update only title and add history when only title changes")]
     public void UpdateDetails_WhenOnlyTitleDifferent_ShouldUpdateTitleAndAddHistoryWithTitleChangeOnly()
     {
         // Arrange
@@ -156,7 +180,10 @@ public class WorkItemTests
         workItem.History.Last().Action.Should().Be($"Title changed from '{initialTitle}' to '{newTitle}'");
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that AddComment adds comment and history
+    /// </summary>
+    [Fact(DisplayName = "AddComment should add comment and history")]
     public void AddComment_WhenCalled_ShouldAddCommentAndHistory()
     {
         // Arrange
@@ -180,7 +207,10 @@ public class WorkItemTests
         workItem.History.Last().ModifiedBy.Should().Be(authorId);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that RecordHistory uses CreatedBy as modifier when none provided
+    /// </summary>
+    [Fact(DisplayName = "RecordHistory should use CreatedBy as modifier when none provided")]
     public void RecordHistory_WhenCalledWithoutModifiedBy_ShouldUseCreatedByAsModifier()
     {
         // Arrange
@@ -201,7 +231,10 @@ public class WorkItemTests
         workItem.History.Last().ModifiedBy.Should().Be(workItem.CreatedBy);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that RecordHistory uses provided modifier when specified
+    /// </summary>
+    [Fact(DisplayName = "RecordHistory should use provided modifier when specified")]
     public void RecordHistory_WhenCalledWithModifiedBy_ShouldUseProvidedModifier()
     {
         // Arrange
@@ -223,7 +256,10 @@ public class WorkItemTests
         workItem.History.Last().ModifiedBy.Should().Be(modifiedBy);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that WorkItem inherits from EntityBase
+    /// </summary>
+    [Fact(DisplayName = "WorkItem should inherit from EntityBase")]
     public void WorkItem_WhenCreated_ShouldInheritFromEntityBase()
     {
         // Arrange
@@ -233,7 +269,10 @@ public class WorkItemTests
         workItem.Should().BeAssignableTo<Entity<Guid>>();
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that Equals returns true for work items with same ID
+    /// </summary>
+    [Fact(DisplayName = "Equals should return true for work items with same ID")]
     public void Equals_WhenComparingWorkItemsWithSameId_ShouldReturnTrue()
     {
         // Arrange
@@ -266,7 +305,10 @@ public class WorkItemTests
         result.Should().BeTrue();
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that Equals returns false for work items with different IDs
+    /// </summary>
+    [Fact(DisplayName = "Equals should return false for work items with different IDs")]
     public void Equals_WhenComparingWorkItemsWithDifferentIds_ShouldReturnFalse()
     {
         // Arrange
@@ -298,7 +340,10 @@ public class WorkItemTests
         result.Should().BeFalse();
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that equality operator returns true for work items with same ID
+    /// </summary>
+    [Fact(DisplayName = "Equality operator should return true for work items with same ID")]
     public void EqualityOperator_WhenComparingWorkItemsWithSameId_ShouldReturnTrue()
     {
         // Arrange
@@ -331,7 +376,10 @@ public class WorkItemTests
         result.Should().BeTrue();
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that inequality operator returns true for work items with different IDs
+    /// </summary>
+    [Fact(DisplayName = "Inequality operator should return true for work items with different IDs")]
     public void InequalityOperator_WhenComparingWorkItemsWithDifferentIds_ShouldReturnTrue()
     {
         // Arrange
@@ -363,7 +411,10 @@ public class WorkItemTests
         result.Should().BeTrue();
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that MarkAsUpdated updates the UpdatedAt property
+    /// </summary>
+    [Fact(DisplayName = "MarkAsUpdated should update the UpdatedAt property")]
     public void MarkAsUpdated_WhenCalled_ShouldUpdateUpdatedAtProperty()
     {
         // Arrange

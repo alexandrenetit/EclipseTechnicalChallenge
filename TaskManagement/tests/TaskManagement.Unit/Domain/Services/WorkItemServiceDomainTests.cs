@@ -7,6 +7,9 @@ using Xunit;
 
 namespace TaskManagement.Tests.Unit.Domain.Services;
 
+/// <summary>
+/// Tests for WorkItemServiceDomain to validate work item creation rules
+/// </summary>
 public class WorkItemServiceDomainTests
 {
     private readonly WorkItemServiceDomain _service;
@@ -16,7 +19,7 @@ public class WorkItemServiceDomainTests
         _service = new WorkItemServiceDomain();
     }
 
-    [Fact]
+    [Fact(DisplayName = "ValidateWorkItemCreation should not throw exception when project has no work items")]
     public void ValidateWorkItemCreation_WithEmptyProject_ShouldNotThrowException()
     {
         // Arrange
@@ -27,7 +30,7 @@ public class WorkItemServiceDomainTests
             .Should().NotThrow();
     }
 
-    [Fact]
+    [Fact(DisplayName = "ValidateWorkItemCreation should not throw exception when project has less than 20 work items")]
     public void ValidateWorkItemCreation_WithLessThan20WorkItems_ShouldNotThrowException()
     {
         // Arrange
@@ -38,7 +41,7 @@ public class WorkItemServiceDomainTests
             .Should().NotThrow();
     }
 
-    [Fact]
+    [Fact(DisplayName = "ValidateWorkItemCreation should throw exception when project has 20 work items")]
     public void ValidateWorkItemCreation_With20WorkItems_ShouldThrowDomainException()
     {
         // Arrange
@@ -50,7 +53,7 @@ public class WorkItemServiceDomainTests
             .WithMessage("Project cannot have more than 20 work items");
     }
 
-    [Fact]
+    [Fact(DisplayName = "ValidateWorkItemCreation should not throw exception when adding low priority item regardless of existing high priority items")]
     public void ValidateWorkItemCreation_WithLowPriority_ShouldNotThrowException()
     {
         // Arrange
@@ -61,7 +64,7 @@ public class WorkItemServiceDomainTests
             .Should().NotThrow();
     }
 
-    [Fact]
+    [Fact(DisplayName = "ValidateWorkItemCreation should not throw exception when adding medium priority item regardless of existing high priority items")]
     public void ValidateWorkItemCreation_WithMediumPriority_ShouldNotThrowException()
     {
         // Arrange
@@ -72,7 +75,7 @@ public class WorkItemServiceDomainTests
             .Should().NotThrow();
     }
 
-    [Fact]
+    [Fact(DisplayName = "ValidateWorkItemCreation should not throw exception when project has less than 5 high priority items")]
     public void ValidateWorkItemCreation_WithLessThan5HighPriorityItems_ShouldNotThrowException()
     {
         // Arrange
@@ -83,7 +86,7 @@ public class WorkItemServiceDomainTests
             .Should().NotThrow();
     }
 
-    [Fact]
+    [Fact(DisplayName = "ValidateWorkItemCreation should throw exception when project has 5 high priority items")]
     public void ValidateWorkItemCreation_With5HighPriorityItems_ShouldThrowDomainException()
     {
         // Arrange
@@ -95,15 +98,13 @@ public class WorkItemServiceDomainTests
             .WithMessage("Project cannot have more than 5 high priority work items");
     }
 
-    [Fact]
+    [Fact(DisplayName = "ValidateWorkItemCreation should throw work item count exception when both limits are reached")]
     public void ValidateWorkItemCreation_WithBothLimitsReached_ShouldThrowWorkItemCountException()
     {
         // Arrange
-        // Create a project with 20 work items (max limit)
         var project = CreateProjectWithWorkItems(20);
 
         // Act & Assert
-        // The work item count exception should take precedence
         _service.Invoking(s => s.ValidateWorkItemCreation(project, WorkItemPriority.High))
             .Should().Throw<DomainException>()
             .WithMessage("Project cannot have more than 20 work items");
@@ -122,7 +123,6 @@ public class WorkItemServiceDomainTests
             "Description",
             Guid.NewGuid());
 
-        // Add the specified number of work items to the project
         for (int i = 0; i < count; i++)
         {
             var workItem = CreateWorkItem(project.Id, WorkItemPriority.Low);
@@ -143,14 +143,12 @@ public class WorkItemServiceDomainTests
             "Description",
             Guid.NewGuid());
 
-        // Add high priority work items
         for (int i = 0; i < highPriorityCount; i++)
         {
             var workItem = CreateWorkItem(project.Id, WorkItemPriority.High);
             project.AddWorkItem(workItem);
         }
 
-        // Add some low priority items to make the test more realistic
         for (int i = 0; i < 5; i++)
         {
             var workItem = CreateWorkItem(project.Id, WorkItemPriority.Low);

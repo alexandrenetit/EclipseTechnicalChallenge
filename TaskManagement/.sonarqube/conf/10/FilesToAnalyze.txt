@@ -1,0 +1,14 @@
+﻿C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\Controllers\ProjectsController.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\Controllers\ReportsController.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\Controllers\WorkItemsController.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\Middleware\ExceptionHandlingMiddleware.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\Program.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\obj\Debug\net8.0\TaskManagement.API.GlobalUsings.g.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\obj\Debug\net8.0\TaskManagement.API.AssemblyInfo.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\obj\Debug\net8.0\TaskManagement.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\appsettings.Development.json
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\appsettings.json
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\Dockerfile
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\Dockerfile.original
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.API\Properties\launchSettings.json

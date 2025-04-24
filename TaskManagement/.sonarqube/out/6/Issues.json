@@ -1,0 +1,145 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Microsoft (R) Visual C# Compiler",
+        "version": "4.13.0.0",
+        "fileVersion": "4.13.0-3.25112.7 (afe5bc4a)",
+        "semanticVersion": "4.13.0",
+        "language": "en-US"
+      },
+      "results": [
+        {
+          "ruleId": "CS8600",
+          "level": "warning",
+          "message": "Converting null literal or possible null value to non-nullable type.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/tests/TaskManagement.Tests.Integration/Endpoints/ProjectsControllerIntegrationTests.cs",
+                "region": {
+                  "startLine": 122,
+                  "startColumn": 27,
+                  "endLine": 122,
+                  "endColumn": 55
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8620",
+          "level": "warning",
+          "message": "Argument of type 'ISetup<IProjectService, Task<ProjectDetailsResponse>>' cannot be used for parameter 'mock' of type 'IReturns<IProjectService, Task<ProjectDetailsResponse?>>' in 'IReturnsResult<IProjectService> ReturnsExtensions.ReturnsAsync<IProjectService, ProjectDetailsResponse?>(IReturns<IProjectService, Task<ProjectDetailsResponse?>> mock, ProjectDetailsResponse? value)' due to differences in the nullability of reference types.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/tests/TaskManagement.Tests.Integration/Endpoints/ProjectsControllerIntegrationTests.cs",
+                "region": {
+                  "startLine": 121,
+                  "startColumn": 9,
+                  "endLine": 121,
+                  "endColumn": 88
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8600",
+          "level": "warning",
+          "message": "Converting null literal or possible null value to non-nullable type.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/tests/TaskManagement.Tests.Integration/Endpoints/ProjectsControllerIntegrationTests.cs",
+                "region": {
+                  "startLine": 164,
+                  "startColumn": 43,
+                  "endLine": 164,
+                  "endColumn": 87
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/tests/TaskManagement.Tests.Integration/Endpoints/ProjectsControllerIntegrationTests.cs",
+                "region": {
+                  "startLine": 164,
+                  "startColumn": 43,
+                  "endLine": 164,
+                  "endColumn": 87
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "CS8600": {
+          "id": "CS8600",
+          "shortDescription": "Converting null literal or possible null value to non-nullable type.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8600)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8602": {
+          "id": "CS8602",
+          "shortDescription": "Dereference of a possibly null reference.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8602)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8620": {
+          "id": "CS8620",
+          "shortDescription": "Argument cannot be used for parameter due to differences in the nullability of reference types.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8620)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

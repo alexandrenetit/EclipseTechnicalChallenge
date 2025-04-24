@@ -7,16 +7,25 @@ using Xunit;
 
 namespace TaskManagement.Tests.Unit.Application.Validators;
 
+/// <summary>
+/// Tests for validating UpdateWorkItemRequest objects
+/// </summary>
 public class UpdateWorkItemRequestValidatorTests
 {
     private readonly UpdateWorkItemRequestValidator _validator;
 
+    /// <summary>
+    /// Initializes a new instance of the UpdateWorkItemRequestValidatorTests class
+    /// </summary>
     public UpdateWorkItemRequestValidatorTests()
     {
         _validator = new UpdateWorkItemRequestValidator();
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator passes with all null values
+    /// </summary>
+    [Fact(DisplayName = "Validator should pass with all null values")]
     public void Validator_WithNullValues_ShouldNotHaveValidationErrors()
     {
         // Arrange
@@ -32,7 +41,10 @@ public class UpdateWorkItemRequestValidatorTests
         result.ShouldNotHaveAnyValidationErrors();
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator passes with valid values
+    /// </summary>
+    [Fact(DisplayName = "Validator should pass with valid values")]
     public void Validator_WithValidValues_ShouldNotHaveValidationErrors()
     {
         // Arrange
@@ -50,7 +62,10 @@ public class UpdateWorkItemRequestValidatorTests
 
     #region Title Validation Tests
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator fails when title exceeds 200 characters
+    /// </summary>
+    [Fact(DisplayName = "Validator should fail when title exceeds 200 characters")]
     public void Validator_WithTitleExceeding200Characters_ShouldHaveTitleLengthError()
     {
         // Arrange
@@ -68,7 +83,10 @@ public class UpdateWorkItemRequestValidatorTests
               .WithErrorMessage("Title must not exceed 200 characters");
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator passes with title exactly 200 characters
+    /// </summary>
+    [Fact(DisplayName = "Validator should pass with title exactly 200 characters")]
     public void Validator_WithTitleExactly200Characters_ShouldNotHaveValidationError()
     {
         // Arrange
@@ -85,7 +103,10 @@ public class UpdateWorkItemRequestValidatorTests
         result.ShouldNotHaveValidationErrorFor(x => x.Title);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator passes with empty title
+    /// </summary>
+    [Fact(DisplayName = "Validator should pass with empty title")]
     public void Validator_WithEmptyTitle_ShouldNotHaveValidationError()
     {
         // Arrange
@@ -105,7 +126,10 @@ public class UpdateWorkItemRequestValidatorTests
 
     #region Description Validation Tests
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator fails when description exceeds 1000 characters
+    /// </summary>
+    [Fact(DisplayName = "Validator should fail when description exceeds 1000 characters")]
     public void Validator_WithDescriptionExceeding1000Characters_ShouldHaveDescriptionLengthError()
     {
         // Arrange
@@ -123,7 +147,10 @@ public class UpdateWorkItemRequestValidatorTests
               .WithErrorMessage("Description must not exceed 1000 characters");
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator passes with description exactly 1000 characters
+    /// </summary>
+    [Fact(DisplayName = "Validator should pass with description exactly 1000 characters")]
     public void Validator_WithDescriptionExactly1000Characters_ShouldNotHaveValidationError()
     {
         // Arrange
@@ -140,7 +167,10 @@ public class UpdateWorkItemRequestValidatorTests
         result.ShouldNotHaveValidationErrorFor(x => x.Description);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator passes with empty description
+    /// </summary>
+    [Fact(DisplayName = "Validator should pass with empty description")]
     public void Validator_WithEmptyDescription_ShouldNotHaveValidationError()
     {
         // Arrange
@@ -160,7 +190,10 @@ public class UpdateWorkItemRequestValidatorTests
 
     #region DueDate Validation Tests
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator passes with default due date
+    /// </summary>
+    [Fact(DisplayName = "Validator should pass with default due date")]
     public void Validator_WithDefaultDueDate_ShouldNotHaveValidationError()
     {
         // Arrange - Using default DateTime without explicitly setting HasValue
@@ -176,7 +209,10 @@ public class UpdateWorkItemRequestValidatorTests
         result.ShouldNotHaveValidationErrorFor(x => x.DueDate);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator passes with valid due date
+    /// </summary>
+    [Fact(DisplayName = "Validator should pass with valid due date")]
     public void Validator_WithValidDueDate_ShouldNotHaveValidationError()
     {
         // Arrange
@@ -196,7 +232,10 @@ public class UpdateWorkItemRequestValidatorTests
 
     #region Status Validation Tests
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator fails with invalid status
+    /// </summary>
+    [Fact(DisplayName = "Validator should fail with invalid status")]
     public void Validator_WithInvalidStatus_ShouldHaveStatusError()
     {
         // Arrange - To simulate an invalid enum value, we'll cast an invalid integer
@@ -214,7 +253,11 @@ public class UpdateWorkItemRequestValidatorTests
               .WithErrorMessage("Invalid status value");
     }
 
-    [Theory]
+    /// <summary>
+    /// Tests that validator passes with valid status values
+    /// </summary>
+    /// <param name="status">The status value to test</param>
+    [Theory(DisplayName = "Validator should pass with valid status values")]
     [InlineData(WorkItemStatus.Pending)]
     [InlineData(WorkItemStatus.InProgress)]
     [InlineData(WorkItemStatus.Completed)]
@@ -237,7 +280,10 @@ public class UpdateWorkItemRequestValidatorTests
 
     #region Combined Fields Tests
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator correctly handles mixed valid and invalid values
+    /// </summary>
+    [Fact(DisplayName = "Validator should handle mixed valid and invalid values correctly")]
     public void Validator_WithSomeMixedValidAndInvalidValues_ShouldHaveSpecificErrors()
     {
         // Arrange

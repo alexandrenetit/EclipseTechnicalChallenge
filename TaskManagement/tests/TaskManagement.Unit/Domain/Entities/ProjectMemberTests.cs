@@ -5,9 +5,15 @@ using Xunit;
 
 namespace TaskManagement.Tests.Unit.Domain.Entities;
 
+/// <summary>
+/// Tests for the ProjectMember entity
+/// </summary>
 public class ProjectMemberTests
 {
-    [Fact]
+    /// <summary>
+    /// Tests that constructor creates project member with correct values
+    /// </summary>
+    [Fact(DisplayName = "Constructor should create project member with provided values")]
     public void Constructor_WhenCalled_ShouldCreateProjectMemberWithProvidedValues()
     {
         // Arrange
@@ -24,7 +30,10 @@ public class ProjectMemberTests
         projectMember.CreatedAt.Should().BeCloseTo(DateTime.UtcNow, TimeSpan.FromSeconds(1));
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that ProjectMember inherits from EntityBase
+    /// </summary>
+    [Fact(DisplayName = "ProjectMember should inherit from EntityBase")]
     public void ProjectMember_WhenCreated_ShouldInheritFromEntityBase()
     {
         // Arrange
@@ -38,7 +47,10 @@ public class ProjectMemberTests
         projectMember.Should().BeAssignableTo<Entity<Guid>>();
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that MarkAsUpdated updates the UpdatedAt property
+    /// </summary>
+    [Fact(DisplayName = "MarkAsUpdated should update UpdatedAt property")]
     public void MarkAsUpdated_WhenCalled_ShouldUpdateUpdatedAtProperty()
     {
         // Arrange
@@ -52,7 +64,10 @@ public class ProjectMemberTests
         projectMember.UpdatedAt.Should().BeCloseTo(DateTime.UtcNow, TimeSpan.FromSeconds(1));
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that Equals returns true for ProjectMembers with same ID
+    /// </summary>
+    [Fact(DisplayName = "Equals should return true for ProjectMembers with same ID")]
     public void Equals_WhenComparingProjectMembersWithSameId_ShouldReturnTrue()
     {
         // Arrange
@@ -72,7 +87,10 @@ public class ProjectMemberTests
         result.Should().BeTrue();
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that Equals returns false for ProjectMembers with different IDs
+    /// </summary>
+    [Fact(DisplayName = "Equals should return false for ProjectMembers with different IDs")]
     public void Equals_WhenComparingProjectMembersWithDifferentIds_ShouldReturnFalse()
     {
         // Arrange

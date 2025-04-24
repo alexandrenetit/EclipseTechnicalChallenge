@@ -1,0 +1,6 @@
+﻿C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Infrastructure\DependencyInjection.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Infrastructure\Persistence\ApplicationDbContext.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Infrastructure\Persistence\UnitOfWork.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Infrastructure\Repositories\ProjectRepository.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Infrastructure\Repositories\UserRepository.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Infrastructure\Repositories\WorkItemRepository.cs

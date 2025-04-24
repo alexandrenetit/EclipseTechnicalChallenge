@@ -1,0 +1,15 @@
+﻿C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Application\DependencyInjection.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Application\DTOs\ProjectDTOs.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Application\DTOs\ReportDTOs.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Application\DTOs\WorkItemDTOs.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Application\Interfaces\IProjectService.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Application\Interfaces\IReportService.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Application\Interfaces\IWorkItemService.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Application\Mappers\ProjectMapper.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Application\Mappers\WorkItemMapper.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Application\Services\ProjectService.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Application\Services\ReportService.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Application\Services\WorkItemService.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Application\Validators\CreateProjectRequestValidator.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Application\Validators\CreateWorkItemRequestValidator.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Application\Validators\UpdateWorkItemRequestValidator.cs

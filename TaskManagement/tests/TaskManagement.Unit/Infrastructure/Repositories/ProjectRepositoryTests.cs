@@ -8,9 +8,12 @@ using Xunit;
 
 namespace TaskManagement.Tests.Unit.Infrastructure.Repositories;
 
+/// <summary>
+/// Tests for ProjectRepository to verify database operations for projects
+/// </summary>
 public class ProjectRepositoryTests
 {
-    [Fact]
+    [Fact(DisplayName = "AddAsync should successfully add project to database context")]
     public async Task AddAsync_ShouldAddProjectToContext()
     {
         // Arrange
@@ -26,7 +29,7 @@ public class ProjectRepositoryTests
         dbContext.Projects.Should().Contain(p => p.Id == project.Id);
     }
 
-    [Fact]
+    [Fact(DisplayName = "GetByIdAsync should return project when it exists")]
     public async Task GetByIdAsync_WhenProjectExists_ShouldReturnProject()
     {
         // Arrange
@@ -46,7 +49,7 @@ public class ProjectRepositoryTests
         result.Id.Should().Be(projectId);
     }
 
-    [Fact]
+    [Fact(DisplayName = "GetByIdAsync should return null when project doesn't exist")]
     public async Task GetByIdAsync_WhenProjectDoesNotExist_ShouldReturnNull()
     {
         // Arrange
@@ -61,7 +64,7 @@ public class ProjectRepositoryTests
         result.Should().BeNull();
     }
 
-    [Fact]
+    [Fact(DisplayName = "GetAllAsync should return all projects in database")]
     public async Task GetAllAsync_ShouldReturnAllProjects()
     {
         // Arrange
@@ -87,7 +90,7 @@ public class ProjectRepositoryTests
         result.Select(p => p.Id).Should().Contain(projects.Select(p => p.Id));
     }
 
-    [Fact]
+    [Fact(DisplayName = "GetByOwnerIdAsync should return only projects with matching owner ID")]
     public async Task GetByOwnerIdAsync_ShouldReturnOnlyProjectsWithMatchingOwnerId()
     {
         // Arrange
@@ -120,7 +123,7 @@ public class ProjectRepositoryTests
         result.All(p => p.OwnerId == ownerId).Should().BeTrue();
     }
 
-    [Fact]
+    [Fact(DisplayName = "UpdateAsync should successfully update project in database")]
     public async Task UpdateAsync_ShouldUpdateProjectInContext()
     {
         // Arrange
@@ -148,7 +151,7 @@ public class ProjectRepositoryTests
         updatedProject.Description.Should().Be("Updated Description");
     }
 
-    [Fact]
+    [Fact(DisplayName = "DeleteAsync should successfully remove project from database")]
     public async Task DeleteAsync_ShouldRemoveProjectFromContext()
     {
         // Arrange
@@ -169,7 +172,7 @@ public class ProjectRepositoryTests
         deletedProject.Should().BeNull();
     }
 
-    [Fact]
+    [Fact(DisplayName = "GetWithWorkItemsAsync should return project with included work items")]
     public async Task GetWithWorkItemsAsync_ShouldIncludeWorkItems()
     {
         // Arrange
@@ -216,6 +219,9 @@ public class ProjectRepositoryTests
         result.WorkItems.Select(w => w.Id).Should().Contain(new[] { workItem1.Id, workItem2.Id });
     }
 
+    /// <summary>
+    /// Creates an in-memory database context for testing
+    /// </summary>
     private ApplicationDbContext CreateDbContext(string dbName)
     {
         var options = new DbContextOptionsBuilder<ApplicationDbContext>()

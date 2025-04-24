@@ -1,0 +1,596 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Microsoft (R) Visual C# Compiler",
+        "version": "4.13.0.0",
+        "fileVersion": "4.13.0-3.25112.7 (afe5bc4a)",
+        "semanticVersion": "4.13.0",
+        "language": "en-US"
+      },
+      "results": [
+        {
+          "ruleId": "CS0108",
+          "level": "warning",
+          "message": "'WorkItemComment.CreatedAt' hides inherited member 'Entity<Guid>.CreatedAt'. Use the new keyword if hiding was intended.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/WorkItemComment.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 21,
+                  "endLine": 13,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 2
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Action' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/WorkItemHistory.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 12,
+                  "endLine": 15,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/WorkItemHistory.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 19,
+                  "endLine": 10,
+                  "endColumn": 25
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Name' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/User.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 13,
+                  "endLine": 14,
+                  "endColumn": 17
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/User.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 19,
+                  "endLine": 10,
+                  "endColumn": 23
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Email' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/User.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 13,
+                  "endLine": 14,
+                  "endColumn": 17
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/User.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 19,
+                  "endLine": 11,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Id' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/Base/Entity.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 15,
+                  "endLine": 9,
+                  "endColumn": 21
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/Base/Entity.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 14,
+                  "endLine": 5,
+                  "endColumn": 16
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Name' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/Project.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 13,
+                  "endLine": 28,
+                  "endColumn": 20
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/Project.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 19,
+                  "endLine": 12,
+                  "endColumn": 23
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Description' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/Project.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 13,
+                  "endLine": 28,
+                  "endColumn": 20
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/Project.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 19,
+                  "endLine": 14,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Owner' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/Project.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 13,
+                  "endLine": 28,
+                  "endColumn": 20
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/Project.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 25,
+                  "endLine": 18,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Content' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/WorkItemComment.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 12,
+                  "endLine": 15,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/WorkItemComment.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 19,
+                  "endLine": 10,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Owner' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/Project.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 12,
+                  "endLine": 31,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/Project.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 25,
+                  "endLine": 18,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Title' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/WorkItem.cs",
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 13,
+                  "endLine": 25,
+                  "endColumn": 21
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/WorkItem.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 19,
+                  "endLine": 11,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Description' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/WorkItem.cs",
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 13,
+                  "endLine": 25,
+                  "endColumn": 21
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/WorkItem.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 19,
+                  "endLine": 12,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1144",
+          "level": "warning",
+          "message": "Remove the unused private setter 'set_Owner'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/Project.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 38,
+                  "endLine": 18,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4015",
+          "level": "warning",
+          "message": "This member hides 'TaskManagement.Domain.Entities.Base.Entity<System.Guid>.CreatedAt'. Make it non-private or seal the class.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/WorkItemComment.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 21,
+                  "endLine": 13,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3875",
+          "level": "warning",
+          "message": "Remove this overload of 'operator =='.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/Base/Entity.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 33,
+                  "endLine": 39,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1860",
+          "level": "note",
+          "message": "Prefer comparing 'Count' to 0 rather than using 'Any()', both for clarity and for performance",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Domain/Entities/WorkItem.cs",
+                "region": {
+                  "startLine": 79,
+                  "startColumn": 13,
+                  "endLine": 79,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "DiagnosticPropertyKey": "Count"
+            }
+          }
+        }
+      ],
+      "rules": {
+        "CA1860": {
+          "id": "CA1860",
+          "shortDescription": "Avoid using 'Enumerable.Any()' extension method",
+          "fullDescription": "Prefer using 'IsEmpty', 'Count' or 'Length' properties whichever available, rather than calling 'Enumerable.Any()'. The intent is clearer and it is more performant than using 'Enumerable.Any()' extension method.",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1860",
+          "properties": {
+            "category": "Performance",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Telemetry",
+              "EnabledRuleInAggressiveMode"
+            ]
+          }
+        },
+        "CS0108": {
+          "id": "CS0108",
+          "shortDescription": "Member hides inherited member; missing new keyword",
+          "fullDescription": "A variable was declared with the same name as a variable in a base type. However, the new keyword was not used. This warning informs you that you should use new; the variable is declared as if new had been used in the declaration.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0108)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8618": {
+          "id": "CS8618",
+          "shortDescription": "Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8618)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "S1144": {
+          "id": "S1144",
+          "shortDescription": "Unused private types or members should be removed",
+          "fullDescription": "This rule raises an issue when a private/internal type or member is never referenced in the code.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1144",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S3875": {
+          "id": "S3875",
+          "shortDescription": "\"operator==\" should not be overloaded on reference types",
+          "fullDescription": "The use of == to compare two objects is expected to do a reference comparison. That is, it is expected to return true if and only if they are the same object instance. Overloading the operator to do anything else will inevitably lead to the introduction of bugs by callers.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3875",
+          "properties": {
+            "category": "Blocker Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S4015": {
+          "id": "S4015",
+          "shortDescription": "Inherited member visibility should not be decreased",
+          "fullDescription": "Decreasing the accessibility level of an inherited method that is not overridable to private will shadow the name of the base method and can lead to confusion.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-4015",
+          "properties": {
+            "category": "Critical Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

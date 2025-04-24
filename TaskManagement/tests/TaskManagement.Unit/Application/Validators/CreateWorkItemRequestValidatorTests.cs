@@ -6,16 +6,25 @@ using Xunit;
 
 namespace TaskManagement.Tests.Unit.Application.Validators;
 
+/// <summary>
+/// Tests for validating CreateWorkItemRequest objects
+/// </summary>
 public class CreateWorkItemRequestValidatorTests
 {
     private readonly CreateWorkItemRequestValidator _validator;
 
+    /// <summary>
+    /// Initializes a new instance of the CreateWorkItemRequestValidatorTests class
+    /// </summary>
     public CreateWorkItemRequestValidatorTests()
     {
         _validator = new CreateWorkItemRequestValidator();
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator passes with valid request
+    /// </summary>
+    [Fact(DisplayName = "Validator should pass with valid request")]
     public void Validator_WithValidRequest_ShouldNotHaveValidationErrors()
     {
         // Arrange
@@ -35,7 +44,10 @@ public class CreateWorkItemRequestValidatorTests
 
     #region Title Validation Tests
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator fails when title is empty
+    /// </summary>
+    [Fact(DisplayName = "Validator should fail when title is empty")]
     public void Validator_WithEmptyTitle_ShouldHaveTitleRequiredError()
     {
         // Arrange
@@ -54,7 +66,10 @@ public class CreateWorkItemRequestValidatorTests
               .WithErrorMessage("Title is required");
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator fails when title is null
+    /// </summary>
+    [Fact(DisplayName = "Validator should fail when title is null")]
     public void Validator_WithNullTitle_ShouldHaveTitleRequiredError()
     {
         // Arrange
@@ -73,7 +88,10 @@ public class CreateWorkItemRequestValidatorTests
               .WithErrorMessage("Title is required");
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator fails when title exceeds 200 characters
+    /// </summary>
+    [Fact(DisplayName = "Validator should fail when title exceeds 200 characters")]
     public void Validator_WithTitleExceeding200Characters_ShouldHaveLengthError()
     {
         // Arrange
@@ -93,7 +111,10 @@ public class CreateWorkItemRequestValidatorTests
               .WithErrorMessage("Title must not exceed 200 characters");
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator passes with title exactly 200 characters
+    /// </summary>
+    [Fact(DisplayName = "Validator should pass with title exactly 200 characters")]
     public void Validator_WithTitleExactly200Characters_ShouldNotHaveValidationError()
     {
         // Arrange
@@ -116,7 +137,10 @@ public class CreateWorkItemRequestValidatorTests
 
     #region Description Validation Tests
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator fails when description exceeds 1000 characters
+    /// </summary>
+    [Fact(DisplayName = "Validator should fail when description exceeds 1000 characters")]
     public void Validator_WithDescriptionExceeding1000Characters_ShouldHaveLengthError()
     {
         // Arrange
@@ -136,7 +160,10 @@ public class CreateWorkItemRequestValidatorTests
               .WithErrorMessage("Description must not exceed 1000 characters");
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator passes with description exactly 1000 characters
+    /// </summary>
+    [Fact(DisplayName = "Validator should pass with description exactly 1000 characters")]
     public void Validator_WithDescriptionExactly1000Characters_ShouldNotHaveValidationError()
     {
         // Arrange
@@ -155,7 +182,10 @@ public class CreateWorkItemRequestValidatorTests
         result.ShouldNotHaveValidationErrorFor(x => x.Description);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator passes when description is null
+    /// </summary>
+    [Fact(DisplayName = "Validator should pass when description is null")]
     public void Validator_WithNullDescription_ShouldNotHaveValidationError()
     {
         // Arrange
@@ -177,7 +207,10 @@ public class CreateWorkItemRequestValidatorTests
 
     #region DueDate Validation Tests
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator fails when due date is default
+    /// </summary>
+    [Fact(DisplayName = "Validator should fail when due date is default")]
     public void Validator_WithDefaultDueDate_ShouldHaveDueDateRequiredError()
     {
         // Arrange
@@ -200,7 +233,10 @@ public class CreateWorkItemRequestValidatorTests
 
     #region Priority Validation Tests
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator fails with invalid priority
+    /// </summary>
+    [Fact(DisplayName = "Validator should fail with invalid priority")]
     public void Validator_WithInvalidPriority_ShouldHavePriorityError()
     {
         // Arrange - To simulate an invalid enum value, we'll cast an invalid integer
@@ -220,7 +256,11 @@ public class CreateWorkItemRequestValidatorTests
               .WithErrorMessage("Invalid priority value");
     }
 
-    [Theory]
+    /// <summary>
+    /// Tests that validator passes with valid priority values
+    /// </summary>
+    /// <param name="priority">The priority value to test</param>
+    [Theory(DisplayName = "Validator should pass with valid priority values")]
     [InlineData(WorkItemPriority.Low)]
     [InlineData(WorkItemPriority.Medium)]
     [InlineData(WorkItemPriority.High)]
@@ -245,7 +285,10 @@ public class CreateWorkItemRequestValidatorTests
 
     #region ProjectId Validation Tests
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator fails with empty project ID
+    /// </summary>
+    [Fact(DisplayName = "Validator should fail with empty project ID")]
     public void Validator_WithEmptyProjectId_ShouldHaveProjectIdError()
     {
         // Arrange
@@ -268,7 +311,10 @@ public class CreateWorkItemRequestValidatorTests
 
     #region CreatedBy Validation Tests
 
-    [Fact]
+    /// <summary>
+    /// Tests that validator fails with empty creator ID
+    /// </summary>
+    [Fact(DisplayName = "Validator should fail with empty creator ID")]
     public void Validator_WithEmptyCreatedBy_ShouldHaveCreatedByError()
     {
         // Arrange

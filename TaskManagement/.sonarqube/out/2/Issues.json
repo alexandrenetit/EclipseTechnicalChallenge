@@ -1,0 +1,426 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Microsoft (R) Visual C# Compiler",
+        "version": "4.13.0.0",
+        "fileVersion": "4.13.0-3.25112.7 (afe5bc4a)",
+        "semanticVersion": "4.13.0",
+        "language": "en-US"
+      },
+      "results": [
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable field '_projectRepository' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the field as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Infrastructure/Persistence/UnitOfWork.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 12,
+                  "endLine": 12,
+                  "endColumn": 22
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Infrastructure/Persistence/UnitOfWork.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 32,
+                  "endLine": 9,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable field '_workItemRepository' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the field as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Infrastructure/Persistence/UnitOfWork.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 12,
+                  "endLine": 12,
+                  "endColumn": 22
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Infrastructure/Persistence/UnitOfWork.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 33,
+                  "endLine": 10,
+                  "endColumn": 52
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Users' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Infrastructure/Persistence/ApplicationDbContext.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 16,
+                  "endLine": 18,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Infrastructure/Persistence/ApplicationDbContext.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 28,
+                  "endLine": 11,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Projects' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Infrastructure/Persistence/ApplicationDbContext.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 16,
+                  "endLine": 18,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Infrastructure/Persistence/ApplicationDbContext.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 31,
+                  "endLine": 12,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'WorkItems' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Infrastructure/Persistence/ApplicationDbContext.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 16,
+                  "endLine": 18,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Infrastructure/Persistence/ApplicationDbContext.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 32,
+                  "endLine": 13,
+                  "endColumn": 41
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'WorkItemComments' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Infrastructure/Persistence/ApplicationDbContext.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 16,
+                  "endLine": 18,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Infrastructure/Persistence/ApplicationDbContext.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 39,
+                  "endLine": 14,
+                  "endColumn": 55
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'WorkItemHistories' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Infrastructure/Persistence/ApplicationDbContext.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 16,
+                  "endLine": 18,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Infrastructure/Persistence/ApplicationDbContext.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 39,
+                  "endLine": 15,
+                  "endColumn": 56
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'ProjectMembers' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Infrastructure/Persistence/ApplicationDbContext.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 16,
+                  "endLine": 18,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Infrastructure/Persistence/ApplicationDbContext.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 37,
+                  "endLine": 16,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3881",
+          "level": "warning",
+          "message": "Fix this implementation of 'IDisposable' to conform to the dispose pattern.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Infrastructure/Persistence/UnitOfWork.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 14,
+                  "endLine": 6,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Infrastructure/Persistence/UnitOfWork.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 14,
+                  "endLine": 6,
+                  "endColumn": 24
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Infrastructure/Persistence/UnitOfWork.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 17,
+                  "endLine": 27,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Provide 'protected' overridable implementation of 'Dispose(bool)' on 'UnitOfWork' or mark the type as 'sealed'.",
+              "1": "'UnitOfWork.Dispose()' should call 'Dispose(true)' and 'GC.SuppressFinalize(this)'."
+            }
+          }
+        },
+        {
+          "ruleId": "CA1816",
+          "level": "note",
+          "message": "Change UnitOfWork.Dispose() to call GC.SuppressFinalize(object). This will prevent derived types that introduce a finalizer from needing to re-implement 'IDisposable' to call it.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.Infrastructure/Persistence/UnitOfWork.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 17,
+                  "endLine": 27,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "CA1816": {
+          "id": "CA1816",
+          "shortDescription": "Dispose methods should call SuppressFinalize",
+          "fullDescription": "A method that is an implementation of Dispose does not call GC.SuppressFinalize; or a method that is not an implementation of Dispose calls GC.SuppressFinalize; or a method calls GC.SuppressFinalize and passes something other than this (Me in Visual Basic).",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1816",
+          "properties": {
+            "category": "Usage",
+            "isEnabledByDefault": true,
+            "tags": [
+              "PortedFromFxCop",
+              "Telemetry",
+              "EnabledRuleInAggressiveMode"
+            ]
+          }
+        },
+        "CS8618": {
+          "id": "CS8618",
+          "shortDescription": "Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8618)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "S3881": {
+          "id": "S3881",
+          "shortDescription": "\"IDisposable\" should be implemented correctly",
+          "fullDescription": "The IDisposable interface is a mechanism to release unmanaged resources, if not implemented correctly this could result in resource leaks or more severe bugs.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3881",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

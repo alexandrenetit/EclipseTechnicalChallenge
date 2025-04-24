@@ -1,0 +1,147 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Microsoft (R) Visual C# Compiler",
+        "version": "4.13.0.0",
+        "fileVersion": "4.13.0-3.25112.7 (afe5bc4a)",
+        "semanticVersion": "4.13.0",
+        "language": "en-US"
+      },
+      "results": [
+        {
+          "ruleId": "S2068",
+          "level": "warning",
+          "message": "\"password\" detected here, make sure this is not a hard-coded credential.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.API/appsettings.json",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 27,
+                  "endLine": 10,
+                  "endColumn": 136
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6667",
+          "level": "warning",
+          "message": "Logging in a catch clause should pass the caught exception as a parameter.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.API/Middleware/ExceptionHandlingMiddleware.cs",
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 17,
+                  "endLine": 24,
+                  "endColumn": 138
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.API/Middleware/ExceptionHandlingMiddleware.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 17,
+                  "endLine": 28,
+                  "endColumn": 108
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Logging in a catch clause should pass the caught exception as a parameter."
+            }
+          }
+        },
+        {
+          "ruleId": "S6966",
+          "level": "warning",
+          "message": "Await RunAsync instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Labs/EclipseTechnicalChallenge/TaskManagement/src/TaskManagement.API/Program.cs",
+                "region": {
+                  "startLine": 59,
+                  "startColumn": 1,
+                  "endLine": 59,
+                  "endColumn": 10
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "S2068": {
+          "id": "S2068",
+          "shortDescription": "Hard-coded credentials are security-sensitive",
+          "fullDescription": "Because it is easy to extract strings from an application source code or binary, credentials should not be hard-coded. This is particularly true for applications that are distributed or that are open-source.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2068",
+          "properties": {
+            "category": "Blocker Security Hotspot",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S6667": {
+          "id": "S6667",
+          "shortDescription": "Logging in a catch clause should pass the caught exception as a parameter.",
+          "fullDescription": "This rule raises an issue on logging calls inside a catch clause that does not pass the raised Exception.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-6667",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S6966": {
+          "id": "S6966",
+          "shortDescription": "Awaitable method should be used",
+          "fullDescription": "In an async method, any blocking operations should be avoided.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-6966",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

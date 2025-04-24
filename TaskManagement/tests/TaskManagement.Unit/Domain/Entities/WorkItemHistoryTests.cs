@@ -6,16 +6,25 @@ using Xunit;
 
 namespace TaskManagement.Tests.Unit.Domain.Entities;
 
+/// <summary>
+/// Tests for the WorkItemHistory entity
+/// </summary>
 public class WorkItemHistoryTests
 {
     private readonly Faker _faker;
 
+    /// <summary>
+    /// Initializes a new instance of the WorkItemHistoryTests class
+    /// </summary>
     public WorkItemHistoryTests()
     {
         _faker = new Faker();
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that constructor creates work item history with provided values
+    /// </summary>
+    [Fact(DisplayName = "Constructor should create work item history with provided values")]
     public void Constructor_WhenCalled_ShouldCreateWorkItemHistoryWithProvidedValues()
     {
         // Arrange
@@ -37,7 +46,10 @@ public class WorkItemHistoryTests
         history.CreatedAt.Should().BeCloseTo(DateTime.UtcNow, TimeSpan.FromSeconds(1));
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that WorkItemHistory inherits from EntityBase
+    /// </summary>
+    [Fact(DisplayName = "WorkItemHistory should inherit from EntityBase")]
     public void WorkItemHistory_WhenCreated_ShouldInheritFromEntityBase()
     {
         // Arrange
@@ -54,7 +66,10 @@ public class WorkItemHistoryTests
         history.Should().BeAssignableTo<Entity<Guid>>();
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that MarkAsUpdated updates the UpdatedAt property
+    /// </summary>
+    [Fact(DisplayName = "MarkAsUpdated should update UpdatedAt property")]
     public void MarkAsUpdated_WhenCalled_ShouldUpdateUpdatedAtProperty()
     {
         // Arrange
@@ -73,7 +88,10 @@ public class WorkItemHistoryTests
         history.UpdatedAt.Should().BeCloseTo(DateTime.UtcNow, TimeSpan.FromSeconds(1));
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that Equals returns true for histories with same ID
+    /// </summary>
+    [Fact(DisplayName = "Equals should return true for histories with same ID")]
     public void Equals_WhenComparingHistoriesWithSameId_ShouldReturnTrue()
     {
         // Arrange
@@ -100,7 +118,10 @@ public class WorkItemHistoryTests
         result.Should().BeTrue();
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that Equals returns false for histories with different IDs
+    /// </summary>
+    [Fact(DisplayName = "Equals should return false for histories with different IDs")]
     public void Equals_WhenComparingHistoriesWithDifferentIds_ShouldReturnFalse()
     {
         // Arrange
@@ -125,7 +146,10 @@ public class WorkItemHistoryTests
         result.Should().BeFalse();
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that equality operator returns true for histories with same ID
+    /// </summary>
+    [Fact(DisplayName = "Equality operator should return true for histories with same ID")]
     public void EqualityOperator_WhenComparingHistoriesWithSameId_ShouldReturnTrue()
     {
         // Arrange
@@ -152,7 +176,10 @@ public class WorkItemHistoryTests
         result.Should().BeTrue();
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that inequality operator returns true for histories with different IDs
+    /// </summary>
+    [Fact(DisplayName = "Inequality operator should return true for histories with different IDs")]
     public void InequalityOperator_WhenComparingHistoriesWithDifferentIds_ShouldReturnTrue()
     {
         // Arrange
@@ -177,7 +204,10 @@ public class WorkItemHistoryTests
         result.Should().BeTrue();
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that GetHashCode returns same value for histories with same ID
+    /// </summary>
+    [Fact(DisplayName = "GetHashCode should return same value for histories with same ID")]
     public void GetHashCode_WhenCalledOnHistoriesWithSameId_ShouldReturnSameValue()
     {
         // Arrange

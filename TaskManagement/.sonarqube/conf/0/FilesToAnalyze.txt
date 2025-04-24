@@ -1,0 +1,3 @@
+﻿C:\Labs\EclipseTechnicalChallenge\TaskManagement\docker-compose.override.yml
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\docker-compose.yml
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\.dockerignore

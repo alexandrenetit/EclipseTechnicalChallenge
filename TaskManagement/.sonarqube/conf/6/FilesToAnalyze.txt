@@ -1,0 +1,9 @@
+﻿C:\Labs\EclipseTechnicalChallenge\TaskManagement\tests\TaskManagement.Tests.Integration\Endpoints\ProjectsControllerIntegrationTests.cs
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\tests\TaskManagement.Tests.Integration\Endpoints\ReportsControllerIntegrationTests.cs
+C:\Users\alexa\.nuget\packages\microsoft.net.test.sdk\17.8.0\build\netcoreapp3.1\Microsoft.NET.Test.Sdk.Program.cs
+C:\Users\alexa\.nuget\packages\microsoft.testplatform.testhost\17.8.0\build\netcoreapp3.1\x64\testhost.exe
+C:\Users\alexa\.nuget\packages\microsoft.testplatform.testhost\17.8.0\build\netcoreapp3.1\x64\testhost.dll
+C:\Users\alexa\.nuget\packages\xunit.runner.visualstudio\2.5.3\build\net6.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\alexa\.nuget\packages\xunit.runner.visualstudio\2.5.3\build\net6.0\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\alexa\.nuget\packages\xunit.runner.visualstudio\2.5.3\build\net6.0\xunit.runner.utility.netcoreapp10.dll
+C:\Labs\EclipseTechnicalChallenge\TaskManagement\tests\TaskManagement.Tests.Integration\coverage.opencover.xml

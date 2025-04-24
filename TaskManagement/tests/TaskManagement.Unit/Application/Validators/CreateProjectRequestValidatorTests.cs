@@ -5,6 +5,9 @@ using Xunit;
 
 namespace TaskManagement.Tests.Unit.Application.Validators;
 
+/// <summary>
+/// Tests for validating CreateProjectRequest objects
+/// </summary>
 public class CreateProjectRequestValidatorTests
 {
     private readonly CreateProjectRequestValidator _validator;
@@ -14,7 +17,8 @@ public class CreateProjectRequestValidatorTests
         _validator = new CreateProjectRequestValidator();
     }
 
-    [Fact]
+
+    [Fact(DisplayName = "Validator should pass with valid request")]
     public void Validator_WithValidRequest_ShouldNotHaveValidationErrors()
     {
         // Arrange
@@ -29,7 +33,7 @@ public class CreateProjectRequestValidatorTests
         result.ShouldNotHaveAnyValidationErrors();
     }
 
-    [Fact]
+    [Fact(DisplayName = "Validator should fail when name is empty")]
     public void Validator_WithEmptyName_ShouldHaveNameRequiredError()
     {
         // Arrange
@@ -45,7 +49,7 @@ public class CreateProjectRequestValidatorTests
               .WithErrorMessage("Project name is required");
     }
 
-    [Fact]
+    [Fact(DisplayName = "Validator should fail when name is null")]
     public void Validator_WithNullName_ShouldHaveNameRequiredError()
     {
         // Arrange
@@ -61,7 +65,7 @@ public class CreateProjectRequestValidatorTests
               .WithErrorMessage("Project name is required");
     }
 
-    [Fact]
+    [Fact(DisplayName = "Validator should fail when name exceeds 100 characters")]
     public void Validator_WithNameExceeding100Characters_ShouldHaveLengthError()
     {
         // Arrange
@@ -78,7 +82,7 @@ public class CreateProjectRequestValidatorTests
               .WithErrorMessage("Project name must not exceed 100 characters");
     }
 
-    [Fact]
+    [Fact(DisplayName = "Validator should fail when description exceeds 500 characters")]
     public void Validator_WithDescriptionExceeding500Characters_ShouldHaveLengthError()
     {
         // Arrange
@@ -95,7 +99,7 @@ public class CreateProjectRequestValidatorTests
               .WithErrorMessage("Description must not exceed 500 characters");
     }
 
-    [Fact]
+    [Fact(DisplayName = "Validator should fail when OwnerId is empty")]
     public void Validator_WithEmptyOwnerId_ShouldHaveOwnerIdRequiredError()
     {
         // Arrange
@@ -111,7 +115,7 @@ public class CreateProjectRequestValidatorTests
               .WithErrorMessage("Owner ID must be a valid GUID");
     }
 
-    [Fact]
+    [Fact(DisplayName = "Validator should pass with name exactly 100 characters")]
     public void Validator_WithValidNameAt100Characters_ShouldNotHaveNameLengthError()
     {
         // Arrange
@@ -127,7 +131,7 @@ public class CreateProjectRequestValidatorTests
         result.ShouldNotHaveValidationErrorFor(x => x.Name);
     }
 
-    [Fact]
+    [Fact(DisplayName = "Validator should pass with description exactly 500 characters")]
     public void Validator_WithValidDescriptionAt500Characters_ShouldNotHaveDescriptionLengthError()
     {
         // Arrange
@@ -143,7 +147,7 @@ public class CreateProjectRequestValidatorTests
         result.ShouldNotHaveValidationErrorFor(x => x.Description);
     }
 
-    [Fact]
+    [Fact(DisplayName = "Validator should pass when description is null")]
     public void Validator_WithNullDescription_ShouldNotHaveValidationError()
     {
         // Arrange

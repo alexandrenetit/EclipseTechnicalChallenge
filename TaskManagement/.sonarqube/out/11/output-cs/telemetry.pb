@@ -1,0 +1,1 @@
+ÅRkC:\Labs\EclipseTechnicalChallenge\TaskManagement\tests\TaskManagement.Unit\TaskManagement.Tests.Unit.csproj¢net8.0ÚCSharp12

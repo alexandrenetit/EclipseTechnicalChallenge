@@ -1,13 +1,13 @@
 # Task Management System API
 
-A RESTful API for managing tasks and projects built with .NET 8, following Clean Architecture and Domain-Driven Design principles.
+Uma API RESTful para gerenciar tarefas e projetos construída com .NET 8, seguindo os princípios de Clean Architecture e Domain-Driven Design.
 
 ## Features
 
-- Project management (create, view, delete)
-- Work item management (create, update, delete, add comments)
-- Performance reporting
-- History tracking for all changes
+- Gerenciamento de projetos (criar, visualizar, excluir)
+- Gerenciamento de work items (criar, atualizar, excluir, adicionar comentários)
+- Relatórios de performance
+- History tracking para todas as mudanças
 
 ## Technologies
 
@@ -18,17 +18,17 @@ A RESTful API for managing tasks and projects built with .NET 8, following Clean
 
 ## Getting Started
 
-### Prerequisites
+### Pré-requisitos
 
 - Docker
 - Docker Compose
 
-### Running with Docker
+### Rodando com o Docker
 
-1. Clone the repository
-2. Run `docker-compose up --build`
-3. The API will be available at `http://localhost:7000`
+1. Clone o repositório
+2. Execute `docker-compose up --build`
+3. A API estará disponível em `http://localhost:7000`
 
-### API Documentation
+### Documentação da API 
 
-After starting the application, Swagger UI will be available at `http://localhost:7000/swagger
+Após iniciar a aplicação, o Swagger UI estará disponível em `http://localhost:7000/swagger`

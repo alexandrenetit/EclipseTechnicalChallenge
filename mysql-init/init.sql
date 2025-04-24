@@ -90,8 +90,8 @@ CREATE INDEX idx_projectmembers_project ON ProjectMembers(ProjectId);
 INSERT INTO Users (Id, Name, Email, IsManager, CreatedAt)
 VALUES (
     '11111111-1111-1111-1111-111111111111', 
-    'Admin User', 
-    'admin@test.com', 
+    'Manager User', 
+    'manager@test.com', 
     TRUE, 
     UTC_TIMESTAMP()
 );

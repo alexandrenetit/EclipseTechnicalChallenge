@@ -8,9 +8,12 @@ using Xunit;
 
 namespace TaskManagement.Tests.Unit.Infrastructure.Repositories;
 
+/// <summary>
+/// Tests for WorkItemRepository to verify database operations for work items
+/// </summary>
 public class WorkItemRepositoryTests
 {
-    [Fact]
+    [Fact(DisplayName = "AddAsync should successfully add work item to database context")]
     public async Task AddAsync_ShouldAddWorkItemToContext()
     {
         // Arrange
@@ -31,7 +34,7 @@ public class WorkItemRepositoryTests
         savedItem.Title.Should().Be(workItem.Title);
     }
 
-    [Fact]
+    [Fact(DisplayName = "GetByIdAsync should return work item with included comments")]
     public async Task GetByIdAsync_ShouldReturnWorkItemWithComments()
     {
         // Arrange
@@ -60,7 +63,7 @@ public class WorkItemRepositoryTests
         result.Comments.Count.Should().Be(1);
     }
 
-    [Fact]
+    [Fact(DisplayName = "GetByProjectIdAsync should return only work items for specified project")]
     public async Task GetByProjectIdAsync_ShouldReturnOnlyWorkItemsForSpecifiedProject()
     {
         // Arrange
@@ -95,7 +98,7 @@ public class WorkItemRepositoryTests
         result.All(w => w.ProjectId == projectId1).Should().BeTrue();
     }
 
-    [Fact]
+    [Fact(DisplayName = "GetWithDetailsAsync should return work item with comments and history")]
     public async Task GetWithDetailsAsync_ShouldIncludeCommentsAndHistory()
     {
         // Arrange
@@ -124,7 +127,7 @@ public class WorkItemRepositoryTests
         result.History.Should().NotBeEmpty(); // Created by constructor
     }
 
-    [Fact]
+    [Fact(DisplayName = "DeleteAsync should successfully remove work item from database")]
     public async Task DeleteAsync_ShouldRemoveWorkItemFromContext()
     {
         // Arrange
@@ -159,7 +162,7 @@ public class WorkItemRepositoryTests
         deletedItem.Should().BeNull();
     }
 
-    [Fact]
+    [Fact(DisplayName = "AddCommentAsync should successfully add comment to database")]
     public async Task AddCommentAsync_ShouldAddCommentToContext()
     {
         // Arrange
@@ -187,7 +190,7 @@ public class WorkItemRepositoryTests
         savedComment.Content.Should().Be("Test comment content");
     }
 
-    [Fact]
+    [Fact(DisplayName = "AddHistoryAsync should successfully add history record to database")]
     public async Task AddHistoryAsync_ShouldAddHistoryToContext()
     {
         // Arrange
@@ -216,7 +219,7 @@ public class WorkItemRepositoryTests
         savedHistory.Action.Should().Be("Status changed to Completed");
     }
 
-    [Fact]
+    [Fact(DisplayName = "UpdateAsync should correctly set entity state to Modified")]
     public async Task UpdateAsync_ShouldCorrectlySetEntityState()
     {
         // Arrange
@@ -240,6 +243,9 @@ public class WorkItemRepositoryTests
         entry.State.Should().Be(EntityState.Modified);
     }
 
+    /// <summary>
+    /// Creates an in-memory database context for testing
+    /// </summary>
     private ApplicationDbContext CreateDbContext(string dbName)
     {
         var options = new DbContextOptionsBuilder<ApplicationDbContext>()
@@ -249,6 +255,9 @@ public class WorkItemRepositoryTests
         return new ApplicationDbContext(options);
     }
 
+    /// <summary>
+    /// Creates a sample work item for testing
+    /// </summary>
     private WorkItem CreateSampleWorkItem(Guid projectId)
     {
         return new WorkItem(

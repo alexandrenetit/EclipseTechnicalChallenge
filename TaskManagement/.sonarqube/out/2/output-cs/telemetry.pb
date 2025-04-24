@@ -1,0 +1,1 @@
+çRwC:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Infrastructure\TaskManagement.Infrastructure.csproj¢net8.0ÚCSharp12

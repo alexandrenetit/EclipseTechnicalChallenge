@@ -1,0 +1,1 @@
+‡RqC:\Labs\EclipseTechnicalChallenge\TaskManagement\src\TaskManagement.Application\TaskManagement.Application.csproj¢net8.0òCSharp12

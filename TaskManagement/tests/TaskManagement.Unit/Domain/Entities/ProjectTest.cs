@@ -8,11 +8,17 @@ using Xunit;
 
 namespace TaskManagement.Tests.Unit.Domain.Entities;
 
+/// <summary>
+/// Tests for the Project entity
+/// </summary>
 public class ProjectTests
 {
     private readonly Faker<Project> _projectFaker;
     private readonly Faker<WorkItem> _workItemFaker;
 
+    /// <summary>
+    /// Initializes a new instance of the ProjectTests class
+    /// </summary>
     public ProjectTests()
     {
         _projectFaker = new Faker<Project>()
@@ -33,7 +39,10 @@ public class ProjectTests
                 Guid.NewGuid()));
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that constructor creates project with provided values
+    /// </summary>
+    [Fact(DisplayName = "Constructor should create project with provided values")]
     public void Constructor_WhenCalled_ShouldCreateProjectWithProvidedValues()
     {
         // Arrange
@@ -55,7 +64,10 @@ public class ProjectTests
         project.Members.Should().BeEmpty();
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that AddWorkItem adds work item when project has less than 20 items
+    /// </summary>
+    [Fact(DisplayName = "AddWorkItem should add work item when project has less than 20 items")]
     public void AddWorkItem_WhenProjectHasLessThan20Items_ShouldAddWorkItem()
     {
         // Arrange
@@ -70,7 +82,10 @@ public class ProjectTests
         project.WorkItems.Count.Should().Be(1);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that AddWorkItem throws exception when project has 20 items
+    /// </summary>
+    [Fact(DisplayName = "AddWorkItem should throw exception when project has 20 items")]
     public void AddWorkItem_WhenProjectHas20Items_ShouldThrowDomainException()
     {
         // Arrange
@@ -89,7 +104,10 @@ public class ProjectTests
         exception.Message.Should().Be("Project cannot have more than 20 work items");
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that RemoveWorkItem removes completed work item
+    /// </summary>
+    [Fact(DisplayName = "RemoveWorkItem should remove completed work item")]
     public void RemoveWorkItem_WhenWorkItemIsCompleted_ShouldRemoveWorkItem()
     {
         // Arrange
@@ -110,7 +128,11 @@ public class ProjectTests
         project.WorkItems.Should().BeEmpty();
     }
 
-    [Theory]
+    /// <summary>
+    /// Tests that RemoveWorkItem throws exception when work item is not completed
+    /// </summary>
+    /// <param name="status">The work item status to test</param>
+    [Theory(DisplayName = "RemoveWorkItem should throw exception when work item is not completed")]
     [InlineData(WorkItemStatus.Pending)]
     [InlineData(WorkItemStatus.InProgress)]
     public void RemoveWorkItem_WhenWorkItemIsNotCompleted_ShouldThrowDomainException(WorkItemStatus status)
@@ -130,7 +152,10 @@ public class ProjectTests
         exception.Message.Should().Be("Cannot remove pending or in-progress work items");
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that Project inherits from EntityBase
+    /// </summary>
+    [Fact(DisplayName = "Project should inherit from EntityBase")]
     public void Project_WhenCreated_ShouldInheritFromEntityBase()
     {
         // Arrange
@@ -140,7 +165,10 @@ public class ProjectTests
         project.Should().BeAssignableTo<Entity<Guid>>();
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that MarkAsUpdated updates the UpdatedAt property
+    /// </summary>
+    [Fact(DisplayName = "MarkAsUpdated should update UpdatedAt property")]
     public void MarkAsUpdated_WhenCalled_ShouldUpdateUpdatedAtProperty()
     {
         // Arrange
@@ -154,7 +182,10 @@ public class ProjectTests
         project.UpdatedAt.Should().BeCloseTo(DateTime.UtcNow, TimeSpan.FromSeconds(1));
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that Equals returns true for projects with same ID
+    /// </summary>
+    [Fact(DisplayName = "Equals should return true for projects with same ID")]
     public void Equals_WhenComparingProjectsWithSameId_ShouldReturnTrue()
     {
         // Arrange
@@ -169,7 +200,10 @@ public class ProjectTests
         result.Should().BeTrue();
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that Equals returns false for projects with different IDs
+    /// </summary>
+    [Fact(DisplayName = "Equals should return false for projects with different IDs")]
     public void Equals_WhenComparingProjectsWithDifferentIds_ShouldReturnFalse()
     {
         // Arrange
@@ -183,7 +217,10 @@ public class ProjectTests
         result.Should().BeFalse();
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that equality operator returns true for projects with same ID
+    /// </summary>
+    [Fact(DisplayName = "Equality operator should return true for projects with same ID")]
     public void EqualityOperator_WhenComparingProjectsWithSameId_ShouldReturnTrue()
     {
         // Arrange
@@ -198,7 +235,10 @@ public class ProjectTests
         result.Should().BeTrue();
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that inequality operator returns true for projects with different IDs
+    /// </summary>
+    [Fact(DisplayName = "Inequality operator should return true for projects with different IDs")]
     public void InequalityOperator_WhenComparingProjectsWithDifferentIds_ShouldReturnTrue()
     {
         // Arrange
@@ -212,7 +252,10 @@ public class ProjectTests
         result.Should().BeTrue();
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests that GetHashCode returns same value for projects with same ID
+    /// </summary>
+    [Fact(DisplayName = "GetHashCode should return same value for projects with same ID")]
     public void GetHashCode_WhenCalledOnProjectsWithSameId_ShouldReturnSameValue()
     {
         // Arrange
