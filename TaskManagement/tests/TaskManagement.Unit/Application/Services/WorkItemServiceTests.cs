@@ -11,6 +11,10 @@ using Xunit;
 
 namespace TaskManagement.Tests.Unit.Application.Services;
 
+/// <summary>
+/// Contains unit tests for the WorkItemService class to verify functionality
+/// for creating, retrieving, updating, and deleting work items.
+/// </summary>
 public class WorkItemServiceTests
 {
     private readonly Faker _faker;
@@ -20,6 +24,10 @@ public class WorkItemServiceTests
     private readonly Mock<IWorkItemServiceDomain> _mockDomainWorkItemService;
     private readonly WorkItemService _workItemService;
 
+    /// <summary>
+    /// Sets up test dependencies including mocks for repositories, unit of work,
+    /// and domain service, and creates the WorkItemService instance for testing.
+    /// </summary>
     public WorkItemServiceTests()
     {
         _faker = new Faker();
@@ -35,7 +43,11 @@ public class WorkItemServiceTests
             _mockDomainWorkItemService.Object);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests the creation of a work item with a valid request.
+    /// </summary>
+    /// <returns></returns>
+    [Fact(DisplayName = "Creating a work item with valid request should successfully create and return the work item")]
     public async Task CreateWorkItemAsync_WithValidRequest_ShouldCreateAndReturnWorkItem()
     {
         // Arrange
@@ -99,7 +111,11 @@ public class WorkItemServiceTests
         Assert.Equal(request.CreatedBy, capturedWorkItem.CreatedBy);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests the creation of a work item with an invalid request.
+    /// </summary>
+    /// <returns></returns>
+    [Fact(DisplayName = "Creating a work item with invalid request should throw a validation exception")]
     public async Task CreateWorkItemAsync_WithInvalidRequest_ShouldThrowValidationException()
     {
         // Arrange
@@ -124,7 +140,7 @@ public class WorkItemServiceTests
         _mockUnitOfWork.Verify(uow => uow.CommitAsync(), Times.Never);
     }
 
-    [Fact]
+    [Fact(DisplayName = "Creating a work item with non-existing project should throw key not found exception")]
     public async Task CreateWorkItemAsync_WithNonExistingProject_ShouldThrowKeyNotFoundException()
     {
         // Arrange
@@ -155,7 +171,11 @@ public class WorkItemServiceTests
         _mockUnitOfWork.Verify(uow => uow.CommitAsync(), Times.Never);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests the creation of a work item that fails domain validation.
+    /// </summary>
+    /// <returns></returns>
+    [Fact(DisplayName = "Creating a work item that fails domain validation should throw domain exception")]
     public async Task CreateWorkItemAsync_WithDomainValidationFailure_ShouldThrowDomainException()
     {
         // Arrange
@@ -193,7 +213,11 @@ public class WorkItemServiceTests
         _mockUnitOfWork.Verify(uow => uow.CommitAsync(), Times.Never);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests the retrieval of work item details for an existing work item.
+    /// </summary>
+    /// <returns></returns>
+    [Fact(DisplayName = "Getting details for an existing work item should return the work item with its associated comments and history")]
     public async Task GetWorkItemDetailsAsync_WithExistingWorkItem_ShouldReturnWorkItemDetails()
     {
         // Arrange
@@ -246,7 +270,11 @@ public class WorkItemServiceTests
         _mockWorkItemRepository.Verify(repo => repo.GetWithDetailsAsync(workItemId), Times.Once);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests the retrieval of work item details for a non-existing work item.
+    /// </summary>
+    /// <returns></returns>
+    [Fact(DisplayName = "Getting details for a non-existing work item should throw key not found exception")]
     public async Task GetWorkItemDetailsAsync_WithNonExistingWorkItem_ShouldThrowKeyNotFoundException()
     {
         // Arrange
@@ -266,7 +294,11 @@ public class WorkItemServiceTests
         _mockWorkItemRepository.Verify(repo => repo.GetWithDetailsAsync(workItemId), Times.Once);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests the update of a work item's status with a valid request.
+    /// </summary>
+    /// <returns></returns>
+    [Fact(DisplayName = "Updating a work item's status with valid request should update and return the work item")]
     public async Task UpdateWorkItemAsync_WithValidStatusUpdate_ShouldUpdateAndReturnWorkItem()
     {
         // Arrange
@@ -301,7 +333,11 @@ public class WorkItemServiceTests
         _mockUnitOfWork.Verify(uow => uow.CommitAsync(), Times.Once);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests the update of a work item's details with a valid request.
+    /// </summary>
+    /// <returns></returns>
+    [Fact(DisplayName = "Updating a work item's details with valid request should update and return the work item")]
     public async Task UpdateWorkItemAsync_WithValidDetailsUpdate_ShouldUpdateAndReturnWorkItem()
     {
         // Arrange
@@ -339,7 +375,11 @@ public class WorkItemServiceTests
         _mockUnitOfWork.Verify(uow => uow.CommitAsync(), Times.Once);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests the update of a work item with an invalid request.
+    /// </summary>
+    /// <returns></returns>
+    [Fact(DisplayName = "Updating a work item with invalid request should throw validation exception")]
     public async Task UpdateWorkItemAsync_WithInvalidRequest_ShouldThrowValidationException()
     {
         // Arrange
@@ -364,7 +404,11 @@ public class WorkItemServiceTests
         _mockUnitOfWork.Verify(uow => uow.CommitAsync(), Times.Never);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests the update of a work item that does not exist.
+    /// </summary>
+    /// <returns></returns>
+    [Fact(DisplayName = "Updating a non-existing work item should throw key not found exception")]
     public async Task UpdateWorkItemAsync_WithNonExistingWorkItem_ShouldThrowKeyNotFoundException()
     {
         // Arrange
@@ -393,7 +437,11 @@ public class WorkItemServiceTests
         _mockUnitOfWork.Verify(uow => uow.CommitAsync(), Times.Never);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests the deletion of a completed work item.
+    /// </summary>
+    /// <returns></returns>
+    [Fact(DisplayName = "Deleting a completed work item should succeed")]
     public async Task DeleteWorkItemAsync_WithCompletedWorkItem_ShouldDeleteWorkItem()
     {
         // Arrange
@@ -421,7 +469,11 @@ public class WorkItemServiceTests
         _mockUnitOfWork.Verify(uow => uow.CommitAsync(), Times.Once);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests the deletion of a work item that is not completed.
+    /// </summary>
+    /// <returns></returns>
+    [Fact(DisplayName = "Deleting a non-completed work item should throw invalid operation exception")]
     public async Task DeleteWorkItemAsync_WithNonCompletedWorkItem_ShouldThrowInvalidOperationException()
     {
         // Arrange
@@ -445,7 +497,11 @@ public class WorkItemServiceTests
         _mockUnitOfWork.Verify(uow => uow.CommitAsync(), Times.Never);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests the deletion of a work item that does not exist.
+    /// </summary>
+    /// <returns></returns>
+    [Fact(DisplayName = "Deleting a non-existing work item should throw key not found exception")]
     public async Task DeleteWorkItemAsync_WithNonExistingWorkItem_ShouldThrowKeyNotFoundException()
     {
         // Arrange
@@ -467,7 +523,11 @@ public class WorkItemServiceTests
         _mockUnitOfWork.Verify(uow => uow.CommitAsync(), Times.Never);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests the addition of a comment to a work item with a valid request.
+    /// </summary>
+    /// <returns></returns>
+    [Fact(DisplayName = "Adding a comment with valid request should add the comment and return it")]
     public async Task AddCommentAsync_WithValidRequest_ShouldAddCommentAndReturnResponse()
     {
         // Arrange
@@ -526,7 +586,11 @@ public class WorkItemServiceTests
         Assert.Equal(workItemId, capturedHistory.WorkItemId);
     }
 
-    [Fact]
+    /// <summary>
+    /// Tests the addition of a comment to a work item that does not exist.
+    /// </summary>
+    /// <returns></returns>
+    [Fact(DisplayName = "Adding a comment to a non-existing work item should throw key not found exception")]
     public async Task AddCommentAsync_WithNonExistingWorkItem_ShouldThrowKeyNotFoundException()
     {
         // Arrange

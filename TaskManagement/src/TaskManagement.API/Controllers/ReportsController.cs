@@ -17,6 +17,7 @@ namespace TaskManagement.API.Controllers
 
         [HttpGet("performance")]
         public async Task<ActionResult<PerformanceReportResponse>> GetPerformanceReport(
+            [FromQuery] Guid userId,
             [FromQuery] DateTime? fromDate = null,
             [FromQuery] DateTime? toDate = null)
         {
@@ -24,6 +25,7 @@ namespace TaskManagement.API.Controllers
             var defaultToDate = DateTime.UtcNow;
 
             var report = await _reportService.GeneratePerformanceReportAsync(
+                userId,
                 fromDate ?? defaultFromDate,
                 toDate ?? defaultToDate);
 
