@@ -16,10 +16,15 @@ Uma API RESTful para gerenciar tarefas e projetos construída com .NET 8, seguin
 - Docker Compose
 ### Running with Docker
 1. Clone o repositório
-2. Execute `docker-compose up --build`
+2. Execute `docker-compose up -d --build` a partir do diretório ./TaskManagement
 3. A API estará disponível em `http://localhost:7000`
 ### API Documentation
 Após iniciar a aplicação, o Swagger UI estará disponível em `http://localhost:7000/swagger`
+
+### Exemplo de chamada para criar um projeto
+
+Após a criação do projeto poderá criar as tarefas.
+Obs: não esqueça de pegar o Id do projeto retornado após a chamada do método POST abaixo.  
 
 ```bash
 curl -X 'POST' \
@@ -31,3 +36,29 @@ curl -X 'POST' \
   "description": "Criação de um projeto de exemplo para criação das tarefas",
   "ownerId": "22222222-2222-2222-2222-222222222222"
 }'
+```
+
+### CRUD das tarefas
+
+Para criar/atualizar/adiconar comentários e etc das tarefas utilize os endpoints expostos no Swagger preenchendo corretamente as informações dos parâmetros nas urls e nos body's.
+
+
+
+### Fase 2: Refinamento
+
+Como parte do processo de evolução do sistema de gerenciamento de tarefas, considero alinhar com o PO as próximas implementações com as reais necessidades dos usuários. Baseado na análise do escopo atual e nas tendências de mercado para ferramentas de produtividade, gostaria de propor as seguintes questões estratégicas para refinamento do produto:
+
+#### Implementação de notificações: 
+Implementar um sistema de notificações para alertar usuários sobre tarefas próximas do vencimento ou alterações em tarefas compartilhadas. Quais canais seriam prioritários (email, push, in-app)?
+
+#### Hierarquia de tarefas: 
+Verificar se existe a necessidade de permitir que tarefas possam ter subtarefas, criando uma estrutura hierárquica que permita melhor organização de projetos complexos.
+
+#### Integrações com ferramentas externas: 
+Verificar quais ferramentas externas (Slack, Microsoft Teams, GitHub, etc.) seriam prioritárias para integração, possibilitando um fluxo de trabalho mais conectado.
+
+#### Personalização de fluxos de trabalho: 
+Investigar a possibilidade de permitir que equipes possam personalizar seus próprios fluxos de trabalho com estados personalizados além dos padrões (pendente, em andamento, concluída).
+
+
+
